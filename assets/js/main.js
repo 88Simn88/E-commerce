@@ -269,7 +269,6 @@ async function main() {
         cart: JSON.parse(window.localStorage.getItem("cart")) || {},
     }
  
-
     printProducts(db);
     handleShowCart();
     addToCartFromProducts(db);
@@ -281,6 +280,7 @@ async function main() {
     
     transitionHeader();
     setTimeout();
+    
 }
 
 main();

@@ -1,32 +1,27 @@
+/* ---------------------------------------------Variables----------------------------------------------- */
+
 :root {
+       
     --h-header: 50px;
     --general-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-    --first-color: hsl(354, 78%, 60%);
-    --button-color: hsl(0, 0%, 17%);
-    --button-color-alt: hsl(0, 0%, 21%);
-    --card-color: hsl(0, 0%, 90%);
-    --title-color: hsl(0, 0%, 15%);
-    --text-color: hsl(0, 0%, 35%);
-    --text-color-light: hsl(0, 0%, 55%);
-    --body-color: hsl(206, 4%, 97%);
-    --container-color: hsl(0, 0%, 100%);
-    --border-color: hsl(0, 0%, 94%);
-   
+
+    --cTransparent: hsla(0, 0%, 100%, 0);
+    --bigContrast-a: hsl(0, 0%, 100%);
+    --bigContrast-b: hsl(0, 0%, 0%);
+    --spColor: hsl(354, 78%, 60%);
+
+    --gradientC1: hsl(206, 4%, 97%);
+    --gradientC2: hsl(0, 0%, 90%);
+    --gradientC3: hsl(0, 0%, 80%);
+    --gradientC4: hsl(0, 0%, 21%);
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
 /* ---------------------------------------------Loader--------------------------------------------------------- */
 
 .loading {
     height: 100vh;
     width:  100vw;
-    background-color: #ffffff;
+    background-color: var(--bigContrast-a);
     position: fixed; 
     z-index: 4000;
 
@@ -37,11 +32,10 @@
     transition: visibility 0.7s, opacity 0.7s;  
 }
 
-
 .loading svg {
     height: 100px;
     width: 100px;
-    fill: var(--first-color);
+    fill: var(--spColor);
 
     animation: animationLoad 4s;
 }
@@ -57,8 +51,15 @@
 
 /* --------------------------------------------------General------------------------------------------------- */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
-    background-color: var(--body-color);
+    background-color: var(--gradientC1);
     scroll-behavior: smooth;
 }
 
@@ -72,7 +73,7 @@ img {
 header {
     height: var(--h-header);
     width: 100%;
-    background-color: #ffffff00;
+    background-color: var(--cTransparent);
     position: fixed;
     top: 0;
     left: 0;
@@ -85,7 +86,7 @@ header {
 }
 
 .header__active {
-    background-color: #ffffff
+    background-color: var(--bigContrast-a);
 }
 
 header > nav{
@@ -106,7 +107,7 @@ header > nav > a {
 }
 
 .nav_logo-icon {
-    fill: var(--first-color);
+    fill: var(--spColor);
 }
 
 .nav__menu {
@@ -123,17 +124,17 @@ header > nav > a {
 }
 
 .page__name {
-    color: #000000;
+    color: var(--bigContrast-b);
     font-weight: 700;
 }
 
 .ul__home {
-    color: var(--first-color);
+    color: var(--spColor);
     font-weight: 700;
 }
 
 .ul__products {
-    color: #000000;
+    color: var(--bigContrast-b);
     font-weight: 700;
 }
 
@@ -144,18 +145,32 @@ header > nav > a {
 header > i {
     font-size: 2rem;
     cursor: pointer;
-    padding: 1rem 1rem 1rem;
+    padding: 1rem;
+    left: -10px;
     
     display: flex;
     align-items: center;
 }
 
+.dmContainer {
+    height: 30px;
+    width: 20px;
+    margin-top: 10px;
+}
+
+.dmContainer i {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
 .amountProducts {
     height: 20px;
     width: 20px;
     font-size: 0.8rem;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--bigContrast-b);
+    color: var(--bigContrast-a);
     display: inline-block;
     border-radius: 50%;
 
@@ -193,7 +208,7 @@ header > i {
 .home__body--paragraph {
     display: block;
     padding: 1rem;
-    color: var(--button-color-alt);
+    color: var(--gradientC4);
 }
 
 .home__body--price {
@@ -203,12 +218,12 @@ header > i {
     margin-left: 0;
     font-size: 2rem;
     font-weight: 600;
-    color: hsl(354, 78%, 60%);
+    color: var(--spColor);
 }
 
 .btn__changeSection {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--bigContrast-b);
+    color: var(--bigContrast-a);
     font-weight: 700;
     text-decoration: none;
     padding: 1.2rem;
@@ -218,14 +233,14 @@ header > i {
 }
 
 .home__image {
-    background-color: hsl(354, 78%, 60%);
+    background-color: var(--spColor);
     height: 100%;
 
     display: flex;
     align-items: center;
 }
 
-/* ------------------------------------------Buttons conteiner-------------------------------------------- */
+/* ------------------------------------------Buttons and conteiner-------------------------------------------- */
 
 .buttons {
     height: 50px;
@@ -243,7 +258,7 @@ header > i {
 }
 
 .buttons__container > div {
-    background-color: #000000;
+    background-color: var(--bigContrast-b);
     width: 130px;
 }
 
@@ -251,12 +266,12 @@ header > i {
     font-size: 15px;
     font-weight: 700;
     padding: 4px;
-    color: #ffffff;
+    color: var(--bigContrast-a);
 }
 
 .buttons__container > div > p {
     font-size: 15px;
-    color: #ffffff;
+    color: var(--bigContrast-a);
 }
 
 
@@ -274,12 +289,12 @@ header > i {
 
 .product{
     border-radius: 1rem;
-    background-color: #ffffff;
+    background-color: var(--bigContrast-a);
 }
 
 .product__img{
     padding: 1rem;
-    background-color: var(--card-color) ;
+    background-color: var(--gradientC2) ;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }
@@ -308,7 +323,7 @@ header > i {
 }
 
 .product__info h4:hover {
-    color: var(--first-color);
+    color: var(--spColor);
 }
 
 .product__info .stock1 {
@@ -320,8 +335,8 @@ header > i {
 }
 
 .product__info .stock2 {
-    color: #ffffff;
-    background-color: lightcoral;
+    color: var(--bigContrast-a);
+    background-color: var(--spColor);
     position:absolute;
     top: 1rem;
     left: 40%;
@@ -336,10 +351,10 @@ header > i {
 }
 
 .product__info .bx-plus {
-    background-color: #ffffff;
+    background-color: var(--bigContrast-a);
     padding: 0.5rem;
     border-radius: 50%;
-    color: #000000;
+    color: var(--bigContrast-b);
     font-size: 1.3rem;
     cursor: pointer;
     box-shadow: var(--general-shadow);
@@ -350,8 +365,8 @@ header > i {
 }
 
 .product__info .bx-plus:hover {
-    background-color: var(--first-color);
-    color: #ffffff;
+    background-color: var(--spColor);
+    color: var(--bigContrast-a);
 }
 
 /* ---------------------------------------------------Cart -------------------------------------------*/
@@ -359,7 +374,7 @@ header > i {
 .cart {
     height: calc(100vh - var(--h-header));
     width: 400px;
-    background-color: #ffffff;
+    background-color: var(--bigContrast-a);
     position: fixed;
     top: var(--h-header);
     right: -100%;
@@ -395,7 +410,7 @@ header > i {
 
 .cart__product--img {
     width: 40%;
-    background-color: #cccc;
+    background-color: var(--gradientC3);
     border-radius: 1rem;
 }
 
@@ -420,7 +435,7 @@ header > i {
 }
 
 .cart__product--body-op .bx-trash {
-    color: lightcoral;
+    color: var(--spColor);
 }
 
 .cart__total {
@@ -444,8 +459,8 @@ header > i {
 .btn__buy {
     padding: 0.5rem;
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: var(--bigContrast-b);
+    color: var(--bigContrast-a);
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
@@ -454,7 +469,7 @@ header > i {
 /* --------------------------------------------------Footer------------------------------------------------- */
 
 footer {
-    background-color: #cccc;
+    background-color: var(--gradientC3);
     height: 380px;
     margin-left: 0;
     margin-right: 0;
@@ -486,8 +501,12 @@ footer {
     list-style: none;
 }
 
+.footer__body1 i {
+    margin-top: 10px;
+}
+
 .footer__body2 {
-    background-color: hsl(354, 78%, 60%);
+    background-color: var(--spColor);
     margin-left: 1rem;
     margin-right: 1rem;
     height: 3rem;
@@ -498,7 +517,7 @@ footer {
 }
 
 .footer__body2 p {
-    color: #ffffff;
+    color: var(--bigContrast-a);
     font-weight: 700;
 }
 
@@ -512,7 +531,7 @@ footer {
 
     body{
     
-        background-color: var(--body-color);
+        background-color: var(--gradientC1);
         scroll-behavior: smooth;
     }
 
@@ -529,7 +548,7 @@ footer {
     }
 
     .home__image {
-        background-color: hsl(354, 78%, 60%);
+        background-color: var(--spColor);
         height: 70%;
         width: 50%;
         top: 0px;
@@ -555,7 +574,7 @@ footer {
         display: block;
         padding: 1rem;
         padding-bottom: 0;
-        color: var(--button-color-alt);
+        color: var(--gradientC4);
     }
     
     .home__body--price {
@@ -564,12 +583,12 @@ footer {
         margin-left: 0;
         font-size: 1.4rem;
         font-weight: 600;
-        color: hsl(354, 78%, 60%);
+        color: var(--spColor);
     }
     
     .btn__changeSection {
-        background-color: #000000;
-        color: #ffffff;
+        background-color: var(--bigContrast-b);
+        color: var(--bigContrast-a);
         font-weight: 700;
         text-decoration: none;
         padding: 1.2rem;
@@ -595,7 +614,7 @@ footer {
 }
 
 .buttons__container > div {
-    background-color: #000000;
+    background-color: var(--bigContrast-b);
     width: 130px;
     margin: 10px;
     padding: 10px;
@@ -606,12 +625,12 @@ footer {
     font-size: 15px;
     font-weight: 600;
     padding: 4px;
-    color: #ffffff;
+    color: var(--bigContrast-a);
 }
 
 .buttons__container > div > p {
     font-size: 13px;
-    color: #ffffff;
+    color: var(--bigContrast-a);
 }
 
 
@@ -624,7 +643,7 @@ footer {
 /* ---------------------------------------Footer------------------------------------------------------------ */
     
 footer {
-    background-color: #cccc;
+    background-color: var(--gradientC3);
     height: 700px;
     margin-top: 5rem;
 }
@@ -637,7 +656,7 @@ footer {
 
 .footer__body1 a {
     text-decoration: none;
-    color: var(--button-color-alt);
+    color: var(--gradientC4);
 }
 
 .footer__body1 h3 {
@@ -649,8 +668,12 @@ footer {
     list-style: none;
 }
 
+.footer__body1 i {
+    margin-top: 10px;
+}
+
 .footer__body2 {
-    background-color: hsl(354, 78%, 60%);
+    background-color: var(--spColor);
     margin-top: 3rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -658,7 +681,7 @@ footer {
 }
 
 .footer__body2 p {
-    color: #ffffff;
+    color: var(--bigContrast-a);
     font-weight: 700;
     padding: 1rem;
     text-align: center;
